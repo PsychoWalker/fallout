@@ -76,6 +76,11 @@ body {
     background-size: cover;
 }
 
+.screen-3 .desert-hot {
+    background: url("../img/left.png") no-repeat;
+    background-size: cover;
+}
+
 .screen-2 > *,
 .screen-3 > * {
     animation: none;
@@ -173,8 +178,17 @@ body.ready .mushroom {
     background: linear-gradient(117deg, #fff8bd, #ffffff);
 }
 
+.screen-3 .sky {
+    background: linear-gradient(117deg, #fff8bd, #ffffff);
+}
+
 .screen-2 {
     transform: translateX(100vw) translateY(-100vh);
+    transition: transform 1s linear;
+}
+
+.screen-3 {
+    transform: translateX(-100vw) translateY(-200vh);
     transition: transform 1s linear;
 }
 
@@ -191,6 +205,16 @@ body.ready .mushroom {
 .back {
     background: url("../img/road-t2-back.png") no-repeat;
     left:0;
+    bottom:0;
+    position: absolute;
+    width: 328px;
+    height: 437px;
+    cursor: pointer;
+}
+
+.backTwo {
+    background: url("../img/road-t2.png") no-repeat;
+    right:0;
     bottom:0;
     position: absolute;
     width: 328px;
