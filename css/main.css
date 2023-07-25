@@ -203,14 +203,14 @@ body.ready .mushroom {
 }
 
 @keyframes morok {
-    0 {filter: blur(3px)}
+    0% {filter: blur(3px)}
     25% {filter: blur(3px) brightness(10)}
     50% {filter: blur(5px) brightness(1) contrast(200%)}
     100% {filter: blur(3px)}
 }
 
 @keyframes nuclear-desert {
-0 {filter: none}
+0% {filter: none}
 25% {filter: brightness(.4)}
 50% {filter: brightness(1) contrast(140%)}
 100% {filter: none}
@@ -222,7 +222,7 @@ body.ready .mushroom {
 }
 
 @keyframes sky {
-     0 {filter: brightness(0)}
+     0% {filter: brightness(0)}
 100% {filter: brightness(100%)}
 }
 
