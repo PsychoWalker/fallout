@@ -1,3 +1,5 @@
-import {readyAnimation} from "./readyAnimation.js";
+import {readyAnimationHandler} from "./readyAnimation.js";
+import {conceptHandler} from "./concept.js";
 
-readyAnimation();
+readyAnimationHandler();
+conceptHandler();

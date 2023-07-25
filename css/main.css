@@ -66,6 +66,32 @@ body {
    animation: morok 5s ease-in 1.5s  forwards;
 }
 
+.screen-1 .desert-hot {
+    background: url("../img/main.png") no-repeat;
+    background-size: cover;
+}
+
+.screen-2 .desert-hot {
+    background: url("../img/right.png") no-repeat;
+    background-size: cover;
+}
+
+.screen-2 > *,
+.screen-3 > * {
+    animation: none;
+    transform: none;
+}
+
+.city {
+    position: absolute;
+    background: url(../img/city.png) repeat-x;
+    width: 100%;
+    height: 372px;
+    top: 415px;
+    left: 0;
+    background-size: 25%;
+}
+
 .mushroom {
     position: absolute;
     left: calc(50% - 160px);
@@ -97,8 +123,8 @@ body {
 
 .navig__nuclear nav {
     position: absolute;
-    top: 75px;
-    left: calc(50% - 90px);
+    top: 66px;
+    left: calc(50% - 80px);
 }
 
 .navig__nuclear nav ul {
@@ -107,9 +133,11 @@ body {
 
 .navig__nuclear nav ul li {
     list-style-type: none;
+    margin-bottom: 90px;
 }
 
 .navig__nuclear nav ul li a {
+    font-family: 'Oswald', sans-serif;
     font-size: 48px;
     line-height: 115%;
     text-decoration: none;
@@ -128,7 +156,46 @@ body.ready .mushroom {
     transform: scale(1.2) ;
     bottom: 370px ;
     transition: transform 1s linear;
+}
 
+.screen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.screen-1 {
+    transform: translateX(0) translateY(0);
+    transition: transform 1s linear;
+}
+
+.screen-2 .sky {
+    background: linear-gradient(117deg, #fff8bd, #ffffff);
+}
+
+.screen-2 {
+    transform: translateX(100vw) translateY(-100vh);
+    transition: transform 1s linear;
+}
+
+.screen-2.main {
+    transform: translateX(0) translateY(-100vh);
+    transition: transform 1s linear;
+}
+
+.screen-1.left {
+    transform: translateX(-100vw) translateY(0);
+    transition: transform 1s linear;
+}
+
+.back {
+    background: url("../img/road-t2-back.png") no-repeat;
+    left:0;
+    bottom:0;
+    position: absolute;
+    width: 328px;
+    height: 437px;
+    cursor: pointer;
 }
 
 @keyframes showText {
