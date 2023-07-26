@@ -197,8 +197,18 @@ body.ready .mushroom {
     transition: transform 1s linear;
 }
 
+.screen-3.main {
+    transform: translateX(0) translateY(-200vh);
+    transition: transform 1s linear;
+}
+
 .screen-1.left {
     transform: translateX(-100vw) translateY(0);
+    transition: transform 1s linear;
+}
+
+.screen-1.right {
+    transform: translateX(100vw) translateY(0);
     transition: transform 1s linear;
 }
 
@@ -212,14 +222,23 @@ body.ready .mushroom {
     cursor: pointer;
 }
 
-.backTwo {
+.goMain {
     background: url("../img/road-t2.png") no-repeat;
     right:0;
+    left: auto;
     bottom:0;
     position: absolute;
     width: 328px;
     height: 437px;
     cursor: pointer;
+}
+
+.fire {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    background: red;
+    filter: blur(10px);
 }
 
 @keyframes showText {
@@ -241,7 +260,7 @@ body.ready .mushroom {
 }
 
 @keyframes explosion {
-    78% {opacity: 1; transform: scale(1.4) translateY(-50px); bottom: 340px}
+    83% {opacity: 1; transform: scale(1.4) translateY(-50px); bottom: 340px}
 100% {opacity: 1; transform: scale(1.2) translateY(0); bottom: 370px}
 }
 

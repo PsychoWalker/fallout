@@ -1,6 +1,6 @@
 const teamHandler = () => {
     const team = document.querySelector('.team');
-    const goBack = document.querySelector('.goBack');
+    const goBack = document.querySelector('.goMain');
     const screenFirst = document.querySelector('.screen-1')
     const screenThird = document.querySelector('.screen-3')
 
