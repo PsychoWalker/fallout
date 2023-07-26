@@ -46,7 +46,7 @@ body {
     width: 100%;
     background: url("../img/desert.png") no-repeat;
     background-size: cover;
-    height: 261px;
+    height: 25vh;
     z-index: 10;
    animation: nuclear-desert 5s ease-in 1.5s forwards;
     transform: scale(1.2);
@@ -55,11 +55,11 @@ body {
 .desert-hot {
     position: absolute;
     left: 0;
-    bottom: 140px;
+    bottom: 13vh;
     width: 100%;
     background: url("../img/desert-hot.png") no-repeat;
     background-size: cover;
-    height: 261px;
+    height: 25vh;
     z-index: 5;
     filter: blur(3px);
     transform: scale(1.2);
@@ -91,8 +91,8 @@ body {
     position: absolute;
     background: url(../img/city.png) repeat-x;
     width: 100%;
-    height: 372px;
-    top: 415px;
+    height: 34vh;
+    bottom: 19vh;
     left: 0;
     background-size: 25%;
 }
@@ -100,7 +100,7 @@ body {
 .mushroom {
     position: absolute;
     left: calc(50% - 160px);
-    bottom: 330px;
+    bottom: 34vh;
     opacity: 0;
     animation: explosion 4s linear 2.5s forwards;
 }
@@ -159,7 +159,7 @@ body.ready .navig__nuclear {
 
 body.ready .mushroom {
     transform: scale(1.2) ;
-    bottom: 370px ;
+    bottom: 32vh ;
     transition: transform 1s linear;
 }
 
@@ -260,8 +260,8 @@ body.ready .mushroom {
 }
 
 @keyframes explosion {
-    83% {opacity: 1; transform: scale(1.4) translateY(-50px); bottom: 340px}
-100% {opacity: 1; transform: scale(1.2) translateY(0); bottom: 370px}
+    83% {opacity: 1; transform: scale(1.4) translateY(-50px); bottom: 32vh}
+100% {opacity: 1; transform: scale(1.2) translateY(0); bottom: 33vh}
 }
 
 @keyframes sky {
