@@ -102,7 +102,7 @@ body {
     left: calc(50% - 160px);
     bottom: 34vh;
     opacity: 0;
-    animation: explosion 4s linear 2.5s forwards;
+    animation: explosion 4.6s linear 2s forwards;
 }
 
 .fallout24 {
@@ -116,43 +116,19 @@ body {
     animation: .35s showText linear 6s forwards;
 }
 
-.navig__nuclear {
+.screen-1 .desert img {
     position: absolute;
     right: 0;
     bottom: 0;
     transform: scale(1.5) translateX(300px);
     width: 500px;
     height: 477px;
-    background: url("../img/road-t.png") no-repeat;
 }
 
-.navig__nuclear nav {
-    position: absolute;
-    top: 66px;
-    left: calc(50% - 80px);
-}
-
-.navig__nuclear nav ul {
-    padding-left: 0;
-}
-
-.navig__nuclear nav ul li {
-    list-style-type: none;
-    margin-bottom: 90px;
-}
-
-.navig__nuclear nav ul li a {
-    font-family: 'Oswald', sans-serif;
-    font-size: 48px;
-    line-height: 115%;
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--color-main-text);
-}
 
 body.ready .desert,
 body.ready .desert-hot,
-body.ready .navig__nuclear {
+body.ready .screen-1 .desert img {
     transform: scale(1) translate(0);
     transition: transform 1s linear;
 }
@@ -241,6 +217,10 @@ body.ready .mushroom {
     filter: blur(10px);
 }
 
+.mobileMenu {
+    display: none;
+}
+
 @keyframes showText {
     100% {opacity: 1}
 }
@@ -260,8 +240,8 @@ body.ready .mushroom {
 }
 
 @keyframes explosion {
-    83% {opacity: 1; transform: scale(1.4) translateY(-50px); bottom: 32vh}
-100% {opacity: 1; transform: scale(1.2) translateY(0); bottom: 33vh}
+    80% {opacity: 1; transform: scale(1.4) translateY(-50px); bottom: 32vh}
+    100% {opacity: 1; transform: scale(1.2) translateY(0); bottom: 32vh}
 }
 
 @keyframes sky {
@@ -269,3 +249,96 @@ body.ready .mushroom {
 100% {filter: brightness(100%)}
 }
 
+@media screen and (max-width: 1280px){
+    @keyframes explosion {
+        80% {opacity: 1; transform: scale(1.2) translateY(-50px); bottom: 30vh}
+        100% {opacity: 1; transform: scale(1) translateY(0); bottom: 30vh}
+    }
+
+    .fallout24 {
+        margin-top: 10vh;
+        font-size: 60px;
+    }
+
+    .goMain,
+    .back {
+        background-size: cover;
+        width: 250px;
+        height: 333px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 1279px) {
+    .mobileMenu {
+        display: block;
+        width: 100%;
+        height: 25vh;
+        background: url("../img/nav.png") no-repeat;
+        background-size: cover;
+        transform: translateY(15vh);
+        transition: transform .25s ease-in;
+    }
+
+    .mobileMenu.open {
+        transform: translateY(0);
+        transition: transform .15s ease-out;
+    }
+
+    .mobileMenu nav {
+        display: none;
+    }
+
+    .mobileMenu.open nav {
+        display: block;
+    }
+
+    .mobileMenu nav ul li {
+        list-style-type: none;
+    }
+
+    .mobileMenu nav ul {
+        padding: 20px;
+        height: 19vh;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobileMenu.open nav ul li a {
+        transition: opacity .25s ease-in;
+        opacity: 1;
+    }
+
+    .mobileMenu nav ul li a {
+        font-size: 48px;
+        font-family: 'Oswald', sans-serif;
+        font-weight: bold;
+        opacity: .8;
+        color: #000;
+        text-decoration: none;
+        transition: opacity .21s ease-out;
+        opacity: 0;
+    }
+
+    .desktopMenu {
+        display: none;
+    }
+
+    .screen-3 .desert-hot img{
+        width: 100%;
+    }
+
+    .h {
+        width: 75vw !important;
+    }
+
+    .goMain, .back {
+        height: 200px;
+    }
+
+    .city {
+        background-size: 100%;
+    }
+}
