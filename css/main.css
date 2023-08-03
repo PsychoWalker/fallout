@@ -73,6 +73,10 @@
     background-color: #f6f8f4;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     overflow: hidden;
     font-family: 'Proxima Nova', sans-serif;
@@ -274,12 +278,41 @@ body.ready .mushroom {
 
 .plate {
     width: 35vw;
-    margin: 50px auto;
+    margin: 50px auto 15px;
     height: 45vh;
     border: 2px solid #000;
     background: #000000a9;
     padding: 10px;
     overflow-y: scroll;
+}
+
+.screen-2 audio {
+    width: 35vw;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    z-index: 999;
+}
+
+.audio {
+    text-align: center;
+    font-size: 22px;
+    color: #000000a9;
+    margin-top: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 999;
+    font-weight: bold;
+    transition: .15s linear;
+    width: 35vw;
+    margin: 0 auto;
+    display: block;
+}
+
+.audio:hover {
+    background: #000000a9;
+    color: var(--color-standart-text);
+    transition: .25s linear;
 }
 
 .plate p,
