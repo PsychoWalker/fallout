@@ -82,6 +82,12 @@ body {
     font-family: 'Proxima Nova', sans-serif;
 }
 
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
 .sky {
 
     position: absolute;
@@ -190,7 +196,7 @@ body.ready .screen-1 .desert img {
 
 body.ready .mushroom {
     transform: scale(1.2) ;
-    bottom: 32vh ;
+    bottom: 30vh ;
     transition: transform 1s linear;
 }
 
@@ -272,10 +278,6 @@ body.ready .mushroom {
     filter: blur(10px);
 }
 
-.mobileMenu {
-    display: none;
-}
-
 .plate {
     width: 35vw;
     margin: 50px auto 15px;
@@ -321,6 +323,10 @@ h2, .subh {
     font-family: 'Oswald', sans-serif;
     color: var(--color-standart-text);
     line-height: 120%;
+}
+
+.mobileMenu {
+    display: none;
 }
 
 @keyframes showText {
@@ -373,12 +379,46 @@ h2, .subh {
 @media screen and (min-width: 320px) and (max-width: 1279px) {
     .mobileMenu {
         display: block;
-        width: 100%;
-        height: 25vh;
+        position: absolute;
+        right: 5vw;
+        top: 5vw;
+        width: 40px;
+        height: 40px;
+        z-index: 9999;
+    }
+
+    .listMobile {
+        position: absolute;
+        left:0;
+        top:0;
+        width: 100vw;
+        height: 100vh;
         background: url("../img/nav.png") no-repeat;
         background-size: cover;
-        transform: translateY(15vh);
-        transition: transform .25s ease-in;
+        transform: translateX(-100vw);
+        transition: transform .15s linear, opacity .15s linear;
+        opacity: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .mobileMenu.open ~ .listMobile {
+        transition: transform .15s linear;
+        opacity: 1;
+        z-index: 9998;
+        transform: translateX(0);
+    }
+
+    .mobileMenu.open .hamburger.is-active .hamburger-inner:before,
+    .mobileMenu.open .hamburger.is-active .hamburger-inner:after{
+        background-color: #ffcc00;
+    }
+
+    .plate {
+        width: 90vw;
+        height: 50vh;
     }
 
     .mobileMenu.open {
@@ -386,42 +426,38 @@ h2, .subh {
         transition: transform .15s ease-out;
     }
 
-    .mobileMenu nav {
-        display: none;
-    }
-
-    .mobileMenu.open nav {
+    .listMobile nav {
         display: block;
     }
 
-    .mobileMenu nav ul li {
+    .listMobile nav ul li {
         list-style-type: none;
     }
 
-    .mobileMenu nav ul {
+    .listMobile nav ul {
         padding: 20px;
         height: 19vh;
         display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .mobileMenu.open nav ul li a {
+    .listMobile nav ul li a {
         transition: opacity .25s ease-in;
         opacity: 1;
     }
 
-    .mobileMenu nav ul li a {
+    .listMobile nav ul li a {
         font-size: 48px;
         font-family: 'Oswald', sans-serif;
         font-weight: bold;
-        opacity: .8;
+        opacity: 1;
         color: #000;
         text-decoration: none;
         transition: opacity .21s ease-out;
-        opacity: 0;
+        line-height: 115%;
+        color: #ffcc00;
     }
 
     .desktopMenu {
