@@ -168,10 +168,10 @@ body, html {
 
 .fallout24 {
     font-family: 'Oswald', sans-serif;
-    font-size: 72px;
+    font-size: 12vh;
     font-weight: 700;
     text-align: center;
-    margin-top: 15vh;
+    margin-top: 5vh;
     opacity: 0;
     color: var(--color-main-text);
     animation: .35s showText linear 6s forwards;
